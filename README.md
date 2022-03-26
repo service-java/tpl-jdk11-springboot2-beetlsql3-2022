@@ -59,8 +59,8 @@ spring:
 # 本地构建 @build
 
 - API示例
-  - https://8080-servicejava-tpljdk11spri-usnxq87i56o.ws-us38.gitpod.io/api/user/listByName?name=user
-  - https://8080-servicejava-tpljdk11spri-usnxq87i56o.ws-us38.gitpod.io/api/user/listByAge?age=22
+  - http://localhost:8080/api/user/listByName?name=user
+  - http://localhost:8080/api/user/listByAge?age=22
 
 - 代码生成
 
