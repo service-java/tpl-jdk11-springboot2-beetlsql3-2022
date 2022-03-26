@@ -1,0 +1,21 @@
+# 数据源配置
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/demo?characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# BeetlSQL配置
+beetlsql:
+  sqlManagers: coreSqlManager
+  coreSqlManager:
+    dev: true
+    ds: ds1
+    basePackage: com.example.**.mapper
+    daoSuffix: Mapper
+    sqlPath: mdsql
+    nameConversion: org.beetl.sql.core.UnderlinedNameConversion
+    dbStyle: org.beetl.sql.core.db.MySqlStyle
+    sqlFileCharset: utf-8

@@ -1,0 +1,14 @@
+package ${package};
+import org.beetl.sql.mapper.BaseMapper;
+
+<%for(impCls in imports){%>
+import ${impCls};
+<%}%>
+
+/*
+*
+* @Date ${date(),"yyyy-MM-dd"}
+*/
+public interface ${className} extends BaseMapper<${entityClass}> {
+
+}

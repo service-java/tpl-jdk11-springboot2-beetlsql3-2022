@@ -1,0 +1,63 @@
+sample
+===
+```sql
+-- 注释
+select ${PS}use("cols")${PE}
+from ${tableName}
+where  ${PS}use("condition")${PE}
+```
+
+cols
+===
+```sql
+<%
+for(col in cols){
+ var colName=col+(colLP.last?"":",");
+ print(colName);
+}%>
+
+```
+
+updateSample
+===
+```sql
+<%
+for(col in cols){
+ var colName=col;
+ var attr = @nc.getPropertyName(col);
+ print(colName+"="+PS+attr+PE);
+ if(!colLP.last){
+    print(",");
+ }
+}%>
+
+```
+
+condition
+===
+```sql
+1 = 1
+<%
+for(col in cols){
+ var colName=col;
+ var attr = @nc.getPropertyName(col);
+%>
+${SS}if(!isEmpty(${attr})){${SE}
+ and ${colName}=${PS+attr+PE}
+${SS}}${SE}
+<%}%>
+```
+
+jsonMap
+===
+```json
+{
+<%
+for(col in cols){
+ var colName=col;
+ var attr = @nc.getPropertyName(col);
+%>
+"${attr}":"${colName}"${!colLP.last?","}
+<%}%>
+}
+```
