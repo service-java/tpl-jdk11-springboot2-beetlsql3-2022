@@ -12,7 +12,7 @@ import java.util.List;
 
 @Log
 @SpringBootTest
-class DemoApplicationTests {
+class GenCodeApplicationTests {
 
     @Value("${spring.datasource.driver-class-name}")
     String driver;
@@ -28,13 +28,9 @@ class DemoApplicationTests {
 
     // 要生成的表格名
     List<String> tableNames = Arrays.asList(
-            "user"
+             "user"
             // , "user_copy"
     );
-
-    @Test
-    void contextLoads() {
-    }
 
     @Test
     void genCode() {
@@ -42,11 +38,12 @@ class DemoApplicationTests {
         SQLManager sqlManager = GenCodeAndDocUtils.getDataSource(driver, url, userName, password);
         GenCodeAndDocUtils.initGroupTemplate(tplPath);
 
-        tableNames.stream().forEach(tableName -> {
-            GenCodeAndDocUtils.genCode(sqlManager, basePackageName, tableName);
-            // GenCodeAndDocUtils.genDoc(sqlManager, basePackageName, tableName);
-        });
-
+        if (tableNames.size() > 0) {
+            tableNames.stream().forEach(tableName -> {
+                GenCodeAndDocUtils.genCode(sqlManager, basePackageName, tableName);
+                // GenCodeAndDocUtils.genDoc(sqlManager, basePackageName, tableName);
+            });
+        }
 
     }
 

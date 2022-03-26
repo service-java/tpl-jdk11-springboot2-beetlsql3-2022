@@ -1,7 +1,7 @@
 userCol
 ===
 ```sql
-id, name, age, create_time, update_time 
+id, name, age 
 ```
 
 listByAge
