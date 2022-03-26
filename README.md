@@ -67,6 +67,11 @@ spring:
 ```
 生成到其他包, 然后在项目里拖拽
 防止覆盖已有代码
+
+===
+// 需要忽略以下位置的代码
+/src/main/java/com/ibeetlcodegen/
+/src/main/resources/sql/
 ```
 
 ![](https://luo0412.oss-cn-hangzhou.aliyuncs.com/1648279561998-cDWA8fjDWCFM.png)
