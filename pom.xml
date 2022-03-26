@@ -16,13 +16,14 @@
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
-
-		<dependency>
+		
+		
+		<!-- <dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>31.1-jre</version>
+			<version>28.1-jre</version>
 			<type>bundle</type>
-		</dependency>
+		</dependency> -->
 
 
 		<dependency>
