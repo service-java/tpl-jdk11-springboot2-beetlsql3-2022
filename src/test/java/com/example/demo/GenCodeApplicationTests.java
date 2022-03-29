@@ -41,7 +41,7 @@ class GenCodeApplicationTests {
         if (tableNames.size() > 0) {
             tableNames.stream().forEach(tableName -> {
                 GenCodeAndDocUtils.genCode(sqlManager, basePackageName, tableName);
-                // GenCodeAndDocUtils.genDoc(sqlManager, basePackageName, tableName);
+                GenCodeAndDocUtils.genDoc(sqlManager, basePackageName, tableName);
             });
         }
 

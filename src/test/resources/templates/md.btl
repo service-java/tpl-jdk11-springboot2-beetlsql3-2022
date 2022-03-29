@@ -57,7 +57,7 @@ for(col in cols){
  var colName=col;
  var attr = @nc.getPropertyName(col);
 %>
-"${attr}":"${colName}"${!colLP.last?","}
+   "${attr}":"${colName}"${!colLP.last?","}
 <%}%>
 }
 ```

@@ -1,18 +1,14 @@
 <%
 /*生成markdown 文档*/
 %>
-## ${tableName}
+# ${tableName}
 
-**说明**
 
-   ${isEmpty(comment)?"无注释":comment}
+${isEmpty(comment)?"无注释":comment}
 
-**表信息**
 <%
 var ids = table.idNames;
 %>
-* 主键 ${ids}
-* 表注释
 
 | 名称 | 数据类型 | 长度  |  说明 |
 | :--: | :--- | :------: |  :----: |
